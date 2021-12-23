@@ -135,14 +135,14 @@ def test_network_and_path(capfd):
     args = Namespace(START_URL="http://www.stealthboats.com/", depth=2)
     network(args, conn)
 
-    args = Namespace(START_URL="http://www.stealthboats.com/", END_URL="https://www.dramabutton.com")
+    args = Namespace(START_URL="http://www.stealthboats.com/", END_URL="http://www.dicesimulator.com")
     path(args, conn)
 
     out, err = capfd.readouterr()
     assert out == "Shortest Path: 2 clicks\n" \
                   "0 - http://www.stealthboats.com\n" \
                   "1 - http://www.pointlesssites.com\n" \
-                  "2 - https://www.dramabutton.com\n"
+                  "2 - http://www.dicesimulator.com\n"
 
     conn.execute("MATCH(n) DETACH DELETE n")
 

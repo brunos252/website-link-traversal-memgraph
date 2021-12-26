@@ -23,7 +23,7 @@ Find the shortest path from START_URL to END_URL from a scraped network of websi
 ```
 python main.py path START_URL END_URL
 ```
-To run all test simply use:
+To run all tests simply use:
 ```
 pytest
 ```
